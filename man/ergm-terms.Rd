@@ -14,7 +14,6 @@
 \alias{terms.ergm}
 \alias{InitErgmTerm}
 
-\alias{absdiff}
 \alias{absdiffcat}
 \alias{altkstar}
 \alias{asymmetric}
@@ -70,7 +69,6 @@
 \alias{dsp}
 \alias{dyadcov}
 \alias{edgecov}
-\alias{edges-term}
 \alias{esp}
 \alias{equalto}
 \alias{greaterthan}
@@ -324,13 +322,6 @@
     % documentation about ergm terms. (parsing functions are in build_term_index.R)
     % The list of term tags must appear on the same line as the term name to be parsed correctly
     %%beginTerms%%
-    \item{\code{absdiff(attr, pow=1)}  (binary)  (dyad-independent)  (frequently-used)  (directed)  (undirected) (quantitative nodal attribute),
-      \code{absdiff(attr, pow=1, form ="sum")}  (valued)  (dyad-independent) (directed)  (undirected) (quantitative nodal attribute)}{\emph{Absolute difference:}
-      The \code{attr} argument specifies a quantitative attribute (see \NodalAttr for details). This term adds one network statistic to the model equaling the
-      sum of \code{abs(attr[i]-attr[j])^pow} for all edges (i,j)
-      in the network.
-
-      \ThreeNineFour}
 
     \item{\code{absdiffcat(attr, base=NULL, levels=NULL)}  (binary) (dyad-independent) (directed) (undirected) (categorical nodal attribute),
       \code{absdiffcat(attr, base=NULL, levels=NULL, form="sum")}  (valued)  (dyad-independent)   (directed)  (undirected) (categorical nodal attribute)}{\emph{Categorical absolute
@@ -1045,8 +1036,7 @@
       \code{edgecov} and \code{dyadcov} terms are equivalent for undirected
       networks.}
 
-    \item{\code{edges}  (binary)  (valued)  (dyad-independent)  (directed)  (undirected) (frequently-used)
-      , a.k.a \code{nonzero}  (valued)  (directed)  (undirected) (dyad-independent)
+    \item{\code{nonzero}  (valued)  (directed)  (undirected) (dyad-independent)
     }{\emph{Edges:} This term adds one network statistic equal
       to the number of edges (i.e. nonzero values) in the network. For undirected networks, \code{edges}
       is equal to \code{kstar(1)}; for directed networks, \code{edges} is equal to
